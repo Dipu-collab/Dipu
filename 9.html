@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation of Factorial</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman";
+        }
+
+        .box {
+            width: 350px;
+            height: 155px;
+            border: 3px solid black;
+            padding: 5px 8px;
+        }
+
+        h1 {
+            font-family: "Times New Roman";
+            font-size: 27px;
+            margin: 0px 0px 20px 0px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input {
+            height: 14px;
+            border: 1px solid #9bbce5;
+        }
+
+        #number {
+            width: 150px;
+        }
+
+        #result {
+            width: 150px;
+        }
+
+        button {
+            margin-top: 18px;
+            margin-bottom: 15px;
+            width: 128px;
+            height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Calculation of Factorial</h1>
+
+    <label>Enter an input value:</label>
+
+    <input type="text" id="number" value="5">
+
+    <br>
+
+    <button onclick="calculateFactorial()">Calc Factorial</button>
+
+    <br>
+
+    <label>Results:</label>
+
+    <input type="text" id="result" readonly>
+
+</div>
+
+<script>
+function calculateFactorial() {
+
+    var num = parseInt(document.getElementById("number").value);
+    var fact = 1;
+
+    if (isNaN(num) || num < 0) {
+        document.getElementById("result").value = "Invalid Input";
+        return;
+    }
+
+    for (var i = 1; i <= num; i++) {
+        fact = fact * i;
+    }
+
+    document.getElementById("result").value = fact;
+}
+</script>
+
+</body>
+</html>
