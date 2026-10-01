@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Different Calculations of Two Numbers</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman";
+        }
+
+        .box {
+            width: 470px;
+            height: 85px;
+            background-color: cyan;
+            border: 1px solid black;
+        }
+
+        h2 {
+            margin: 0;
+            font-family: "Times New Roman";
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 1px 1px black;
+        }
+
+        table {
+            margin: auto;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 145px;
+            height: 12px;
+            font-size: 10px;
+        }
+
+        button {
+            width: 22px;
+            height: 16px;
+            font-size: 10px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Different Calculations of Two Numbers</h2>
+
+    <table>
+        <tr>
+            <td>Enter Number1</td>
+            <td>
+                <input type="text" id="num1" value="18">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Enter Number2</td>
+            <td>
+                <input type="text" id="num2" value="11">
+            </td>
+        </tr>
+
+        <tr>
+            <td>The Result is :</td>
+            <td>
+                <input type="text" id="result" value="29" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="add()">+</button>
+                &nbsp;
+                <button onclick="subtract()">-</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+function add() {
+    var n1 = parseFloat(document.getElementById("num1").value);
+    var n2 = parseFloat(document.getElementById("num2").value);
+
+    document.getElementById("result").value = n1 + n2;
+}
+
+function subtract() {
+    var n1 = parseFloat(document.getElementById("num1").value);
+    var n2 = parseFloat(document.getElementById("num2").value);
+
+    document.getElementById("result").value = n1 - n2;
+}
+</script>
+
+</body>
+</html>
