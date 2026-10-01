@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Animation</title>
+
+    <style>
+        #myImage {
+            width: 200px;
+            position: relative;
+            display: none;
+        }
+
+        .animate {
+            animation: moveImage 3s infinite alternate;
+        }
+
+        @keyframes moveImage {
+            from {
+                left: 0px;
+                transform: scale(1);
+            }
+
+            to {
+                left: 300px;
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Image Animation</h2>
+
+<button onclick="showImage()">Click to Display Image</button>
+
+<br><br>
+
+<img id="myImage" src="image.jpg" onclick="animateImage()">
+
+<script>
+function showImage() {
+    var image = document.getElementById("myImage");
+    image.style.display = "block";
+}
+
+function animateImage() {
+    var image = document.getElementById("myImage");
+    image.classList.add("animate");
+}
+</script>
+
+</body>
+</html>
