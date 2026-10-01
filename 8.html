@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Evaluation of Arithmetic Expression</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman";
+        }
+
+        .box {
+            width: 420px;
+            height: 130px;
+            border: 1px solid black;
+            padding: 0px 8px;
+        }
+
+        h1 {
+            font-family: "Times New Roman";
+            font-size: 22px;
+            margin: 0px;
+            padding-top: 0px;
+            line-height: 1.0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin-top: 14px;
+        }
+
+        label {
+            font-size: 13px;
+        }
+
+        input {
+            height: 13px;
+            border: 1px solid #9bbce5;
+        }
+
+        #expression {
+            width: 220px;
+        }
+
+        #result {
+            width: 155px;
+        }
+
+        button {
+            margin-left: 7px;
+            width: 85px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>
+        The Evaluation of<br>
+        Arithmetic Expression
+    </h1>
+
+    <hr>
+
+    <label>Enter an expression to evaluate:</label>
+
+    <input type="text" id="expression" value="5+8/5-3*6-2+4">
+
+    <button onclick="evaluateExpression()">Evaluate</button>
+
+    <button onclick="resetForm()">Reset</button>
+
+    <br><br>
+
+    <label>Results:</label>
+
+    <br>
+
+    <input type="text" id="result" readonly>
+
+</div>
+
+<script>
+function evaluateExpression() {
+
+    var expression = document.getElementById("expression").value;
+
+    try {
+        var answer = eval(expression);
+
+        document.getElementById("result").value = answer;
+    }
+    catch (error) {
+        document.getElementById("result").value = "Invalid Expression";
+    }
+}
+
+function resetForm() {
+    document.getElementById("expression").value = "";
+    document.getElementById("result").value = "";
+}
+</script>
+
+</body>
+</html>
