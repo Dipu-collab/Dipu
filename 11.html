@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <script>
+        function validateForm()
+        {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var country = document.getElementById("country").value;
+
+            /* First Name Required */
+            if (fname == "")
+            {
+                alert("First Name is required");
+                return false;
+            }
+
+            /* Last Name Required */
+            if (lname == "")
+            {
+                alert("Last Name is required");
+                return false;
+            }
+
+            /* Email Required */
+            if (email == "")
+            {
+                alert("Email is required");
+                return false;
+            }
+
+            /* First Name Maximum Length */
+            if (fname.length > 20)
+            {
+                alert("First Name should not exceed 20 characters");
+                return false;
+            }
+
+            /* Phone Number Numeric Only */
+            if (isNaN(phone) || phone == "")
+            {
+                alert("Phone number should be numeric only");
+                return false;
+            }
+
+            /* Country Selection */
+            if (country == "")
+            {
+                alert("Please select a country");
+                return false;
+            }
+
+            /* Address Validation */
+            if (address.indexOf("@") == -1 || address.indexOf(".") == -1)
+            {
+                alert("Mailing address must contain @ and . symbol");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<form onsubmit="return validateForm()"
+      style="border:3px solid black; width:330px; padding:10px;">
+
+    <label>First Name</label>
+    <input type="text" id="fname">
+    <br><br>
+
+    <label>Last Name</label>
+    <input type="text" id="lname">
+    <br><br>
+
+    <label style="margin-left:30px;">EMail</label>
+    <input type="text" id="email">
+    <br><br>
+
+    <label style="margin-left:28px;">Phone</label>
+    <input type="text" id="phone">
+    <br><br>
+
+    <label style="margin-left:14px;">Address</label>
+    <textarea id="address" rows="7" cols="20"></textarea>
+    <br><br>
+
+    <label style="margin-left:14px;">Country</label>
+    <select id="country">
+        <option value="">[choose yours]</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Canada">Canada</option>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Submit" style="margin-left:65px;">
+
+</form>
+
+</body>
+</html>

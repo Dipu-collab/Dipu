@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Form</title>
+
+    <script>
+
+        function validateName()
+        {
+            var name = document.getElementById("name").value;
+
+            if (!/^[A-Za-z ]+$/.test(name))
+            {
+                alert("Name should contain only alphabets and spaces");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePhone()
+        {
+            var phone = document.getElementById("phone").value;
+
+            if (!/^[0-9]+$/.test(phone))
+            {
+                alert("Phone should contain only numbers");
+                return false;
+            }
+
+            return true;
+        }
+
+        function showDOB()
+        {
+            var dob = document.getElementById("dob").value;
+
+            if (dob == "")
+            {
+                alert("Please enter Date of Birth");
+                return false;
+            }
+
+            return true;
+        }
+
+        function showATMValidity()
+        {
+            var validity = document.getElementById("validity").value;
+
+            if (validity == "")
+            {
+                alert("Please enter ATM Card Validity Date");
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+
+<h2>ATM Card Details</h2>
+
+<form>
+
+    <label>Enter the Name:</label>
+    <input type="text" id="name"
+           onblur="validateName()">
+    <br><br>
+
+    <label>Enter the Phone:</label>
+    <input type="text" id="phone"
+           onblur="validatePhone()">
+    <br><br>
+
+    <label>Date of Birth:</label>
+    <input type="date" id="dob"
+           onchange="showDOB()">
+    <br><br>
+
+    <label>ATM Card Validity Date:</label>
+    <input type="month" id="validity"
+           onchange="showATMValidity()">
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
